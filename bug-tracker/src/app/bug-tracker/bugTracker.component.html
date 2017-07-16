@@ -1,5 +1,8 @@
 <h1>Bug Tracker</h1>
 <hr>
+Magesh : tkmagesh77@gmail.com
+Contact: 9901911221
+<hr>
 <section class="stats">
 	<span class="closed">{{bugs | countClosed}}</span>
 	<span> / </span>
@@ -26,7 +29,7 @@
         <li *ngFor="let bug of (bugs | sort:sortby:desc)">
             <span class="bugname" (click)="onBugClick(bug)"  [ngClass]="{closed : bug.isClosed}">Bug - {{bug.name | trimText}}</span>
             <span> - [{{bug.id}}]</span>
-            <div class="datetime">[Created At]</div>
+            <div class="datetime">[{{bug.createdAt | elapsed}}]</div>
             <a href="#">More...</a>
         </li>
 	</ol>

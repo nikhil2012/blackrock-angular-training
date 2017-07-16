@@ -7,13 +7,16 @@ import { Injectable } from '@angular/core';
 export class BugOperations {
     currentBugId : number = 0;
 
-    constructor(public bugStorage:BugStorageService) {}
+    constructor(public bugStorage:BugStorageService) {
+        this.currentBugId = this.bugStorage.count();
+    }
 
     createNew(bugName:string) : IBug {
         let newBug = {
             id : ++this.currentBugId,
             name : bugName,
-            isClosed : false
+            isClosed : false,
+            createdAt : new Date()
         }
         this.bugStorage.addOrUpdateBug(newBug);
         return newBug;
@@ -24,9 +27,9 @@ export class BugOperations {
         return {...bug, isClosed : !bug.isClosed};
     }
 
-    removeBug(bug) : IBug {
-        this.bugStorage.removeBug(bug);
-        return bug;
+    removeBug(bugId : number) {
+        console.log("in service:remove bug:",bugId);
+        this.bugStorage.removeBug(bugId);
     }
 
     getAll() : IBug[] {

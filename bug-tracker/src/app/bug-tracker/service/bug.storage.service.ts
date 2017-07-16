@@ -29,4 +29,8 @@ export class BugStorageService {
         }
         return bugs;
     }
+
+    count() : number {
+        return this.storage.length;
+    }
 }

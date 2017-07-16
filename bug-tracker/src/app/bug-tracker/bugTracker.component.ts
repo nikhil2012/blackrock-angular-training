@@ -9,6 +9,8 @@ import { BugOperations } from './service/BugOperations.service';
 })
 export class BugTrackerComponent {
 
+    desc : any = '';
+    sortby : any = '';
     newBugName : string = '';
     bugs : Array<IBug> = [];
  //   bugOperations : BugOperations = new BugOperations();
@@ -24,7 +26,7 @@ export class BugTrackerComponent {
             isClosed : false
         } */
         let newBug = this.bugOperations.createNew(this.newBugName);
-        this.bugs.push(newBug);
+        //this.bugs.push(newBug);
         this.bugs = [...this.bugs, newBug];
     }
 
@@ -41,12 +43,11 @@ export class BugTrackerComponent {
                 this.bugs.splice(index, 1);
             }
         } */
-        this.bugs = this.bugs.filter(bug => !bug.isClosed);
-
+        //this.bugs = this.bugs.filter(bug => !bug.isClosed);
         let closedBugs = this.bugs.filter(bug => bug.isClosed);
         closedBugs.forEach(element => {
             this.bugOperations.removeBug(element.id);
         });
+        this.bugs = this.bugOperations.getAll();
     }
-
 }
