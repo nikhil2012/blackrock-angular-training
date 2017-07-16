@@ -1,0 +1,47 @@
+<h1>Bug Tracker</h1>
+<hr>
+<section class="stats">
+	<span class="closed">{{bugs | countClosed}}</span>
+	<span> / </span>
+	<span>{{bugs.length}}</span>
+</section>
+<section class="sort">
+	<label for="">Order By :</label>
+	<select [(ngModel)]="sortby">
+		<option value="id">Id</option>
+		<option value="name">Name</option>
+		<option value="isClosed">Status</option>
+	</select>
+	<label for="">Descending ? :</label>
+	<input type="checkbox" name="" id="descending" [(ngModel)]="desc">
+</section>
+<section class="edit">
+	<label for="">New Bug :</label>
+	<input type="text" name="" id="" [(ngModel)]="newBugName">
+	<input type="button" value="Create" (click)="onCreateClick()">
+</section>
+
+<section class="list">
+	<ol>
+        <li *ngFor="let bug of (bugs | sort:sortby:desc)">
+            <span class="bugname" (click)="onBugClick(bug)"  [ngClass]="{closed : bug.isClosed}">Bug - {{bug.name | trimText}}</span>
+            <span> - [{{bug.id}}]</span>
+            <div class="datetime">[Created At]</div>
+            <a href="#">More...</a>
+        </li>
+	</ol>
+    <input type="button" value="Remove Closed" (click)="onRemoveClosedClick()">
+</section>
+
+<!-- Closed bugs
+<section class="list">
+	<ol>
+        <ng-template ngFor let-bug [ngForOf]="bugs">
+            <li *ngIf="bug.isClosed">
+                <span class="bugname" (click)="onBugClick(bug)"  [ngClass]="{closed : bug.isClosed}">Bug - {{bug | json}}</span>
+                <div class="datetime">[Created At]</div>
+                <a href="#">More...</a>
+            </li>
+        </ng-template>
+	</ol>
+</section> -->
