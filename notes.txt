@@ -1,0 +1,165 @@
+bit.ly/javascript-training-videos
+bit.ly/angular-training-videos
+momentjs.com
+promisesa+.com
+crossroads.js
+
+
+DAY-1
+framework to build rich web app
+
+controller - how to process
+component - genrate views
+
+Browser support:
+Data storage
+	- local storage
+	- Session storage
+	- Indexed DB
+File system 
+	- 
+Multi threading
+	- Web workers
+Sockets
+	- Web socket
+Host
+	- offline application cache
+	- service worker
+Device access
+	- camera
+	- printer
+------------------------------------------------
+Angular2 - we can create composition of components
+
+- import html
+   -> html + css + behaviour
+- web components
+	- polymers
+
+===================================================================================
+COMPONENTS -> comprises view+controller(logic)      ---
+PIPE -> Data transformation							   |- For UI
+DIRECTIVES -> DOM level manipulation				---
+SERVICE -> place to organise non-user interaction/logic     |- For backend logic
+MODULES -> as packages in Java
+====================================================================================
+
+Angular has 3 flavors: 
+- Angular with javascript - ES5,6...
+- Angular with typescript
+- Angular with Dalt (by google)
+
+------------------------------------------------------
+Install angular CLI
+npm install @angular/cli -g
+------------------------------------------------------
+==========================================================================
+Node package manager repository -> npmjs.com
+Account details: nikhilsharma201287@gmail.com, nikhilsharma,
+==========================================================================
+Appplication setup
+- application information(metadata) -> package.json - has data like dependencies etc...
+	key sections are:
+	1. dependencies  [is about runtime to run app]
+	2. dev-dependencies  [is what is needed at development time]
+	3. scripts
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Day2
+
+Babble - transpiler to convert es6 code to es5 json
+Transcript compiler - also does the same
+
+tsconfig.json
+	- target : target version of javascript to compile to
+	- sourceMap : debugging
+	- For browsers (obsolete)(used if not on angular)AMD : asynchronous module resolution which is in require.js
+		but in nodejs(angular) we achieve it with commonjs [ES5]
+		=====================
+		[ES6]Browserify module is used to use the common code
+
+tslint.json
+	- linting is used for static code analysis
+
+karma.conf.js 
+	- tool to execute the tests
+	- it is a test runner
+	- it can run tests across different browsers
+protractor.conf.js
+	- it has framework used for end-to-end testing
+	- created on selenium framework to provide user-friendly apis
+	- specs are in e2e file
+	
+main.ts
+	- import with ./ or ../ if module is yours; otherwise directly the name for node_modules
+
+app.module.ts
+	We package our UI, service, .. in module; and then import them in module
+	@Module
+	- declarations : declare entities that deal with UI: Component, pipe, directives
+	- providers : services
+	- imports : other modules that we depend on
+	- bootstrap : starting components for this module
+app.component.ts
+	@Component
+	- selector : tag where the component presentation and behaviour nedds to be applied
+	- templateUrl : html (presentation) temple file
+	- styleUrls : css
+	- class : where we write the behaviour
+
+=========================================================================
+Two-way binding : 
+	Comes from FormsModule in @angular/forms
+		[(ngModel)]username
+
+@Input
+	Pass inputs to other components
+====================================================
+Directives:
+	- *ngFor  --> * indicates structural directive that can change the DOM
+	- *ngIf
+====================================================
+Services and Dependency Injection
+
+
+==========================================
+PIPE : Limit number of characters in UI (Can be achieved using CSS, but we'll do using PIPES)
+PIPE is a class, which we create
+using Pipe an PipeTransform annotation to make a class a PIPE class
+=================================================================
+Local storage on client side (Browser)
+ - It is key value store
+ - Both key and value are of type string
+ - ==> 
+	window.localStorage
+		- setItem(key, value)
+		- getItem(key) returns value
+		- removeItem(key)
+		- clear()
+		- key(index) returns the key at index
+		- length
+====================================================================
+Cross Document Messaging
+Pass message from parent window to child window
+=============================================================
+@Injectable - is used to inject dependencies from service to service
+
+================================================
+Communicate with server
+ - how to perform asynchronous operations
+   
+   * Promise object (Javascript and Angular1 uses this)
+	  - then function to subscribe
+	  - catch funtion to catch errors
+
+   * Observables / Genrator / Awake (3 approaches are there in Agular 2)
+	  - Observables are the objects that push the data to subsscribed elements when they come in future
+	  - 
+	 How to:
+	 - in module and component import 'Http' service
+	 - 
+===================================================
+ng build --prod

@@ -1,0 +1,88 @@
+D:\angular-training\Day1>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg> --save` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: (Day1)
+Sorry, name can no longer contain capital letters.
+name: (Day1) day1
+version: (1.0.0)
+description: hands-on on day1
+entry point: (index.js) dist/app.js
+test command:
+git repository:
+keywords:
+author: niksharm
+license: (ISC) MIT
+About to write to D:\angular-training\Day1\package.json:
+
+{
+  "name": "day1",
+  "version": "1.0.0",
+  "description": "hands-on on day1",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "niksharm",
+  "license": "MIT"
+}
+
+
+Is this ok? (yes) yes
+
+D:\angular-training\Day1>
+D:\angular-training\Day1>
+D:\angular-training\Day1>
+D:\angular-training\Day1>npm install typescript --save-dev
+day1@1.0.0 D:\angular-training\Day1
+`-- typescript@2.4.1
+
+npm WARN day1@1.0.0 No repository field.
+
+D:\angular-training\Day1>
+D:\angular-training\Day1>npm run build
+
+D:\angular-training\Day1>
+D:\angular-training\Day1>ng new first-app
+installing ng
+  create .editorconfig
+  create README.md
+  create src\app\app.component.css
+  create src\app\app.component.html
+  create src\app\app.component.spec.ts
+  create src\app\app.component.ts
+  create src\app\app.module.ts
+  create src\assets\.gitkeep
+  create src\environments\environment.prod.ts
+  create src\environments\environment.ts
+  create src\favicon.ico
+  create src\index.html
+  create src\main.ts
+  create src\polyfills.ts
+  create src\styles.css
+  create src\test.ts
+  create src\tsconfig.app.json
+  create src\tsconfig.spec.json
+  create src\typings.d.ts
+  create .angular-cli.json
+  create e2e\app.e2e-spec.ts
+  create e2e\app.po.ts
+  create e2e\tsconfig.e2e.json
+  create .gitignore
+  create karma.conf.js
+  create package.json
+  create protractor.conf.js
+  create tsconfig.json
+  create tslint.json
+Installing packages for tooling via npm.
+Project 'first-app' successfully created.
+
+D:\angular-training\Day1>
+
